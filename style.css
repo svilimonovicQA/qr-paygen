@@ -16,26 +16,49 @@ h1 {
 form {
     background: #fff;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 500px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 label {
     display: block;
-    margin: 10px 0 5px;
+    margin: 15px 0 8px;
     text-align: center;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+label:hover {
+    color: #28a745;
 }
 
 input {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border: 2px solid #e0e0e0;
     border-radius: 4px;
     box-sizing: border-box;
     text-align: center;
+    transition: all 0.3s ease;
+}
+
+input:hover {
+    border-color: #999;
+}
+
+input:focus {
+    outline: none;
+    border-color: #28a745;
+    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.2);
 }
 
 input:disabled {
@@ -46,16 +69,26 @@ input:disabled {
 button {
     background-color: #28a745;
     color: white;
-    padding: 10px;
+    padding: 12px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 15px;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
 }
 
 button:hover {
     background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+}
+
+button:active {
+    transform: translateY(1px);
 }
 
 h2 {

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Code Bank Account Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>QR Code Bank Account Generator</h1>
+    <form id="qrForm">
+      <label for="K">Identifikacija NBS IPS QR koda:</label>
+      <input
+        type="text"
+        id="K"
+        name="oznaka_transakcije"
+        value="PR"
+        disabled
+        required
+      /><br />
+
+      <label for="V">Verzija:</label>
+      <input
+        type="text"
+        id="V"
+        name="verzija_dokumenta"
+        value="01"
+        disabled
+        required
+      /><br />
+
+      <label for="C">Znakovni skup:</label>
+      <input
+        type="text"
+        id="C"
+        name="redni_broj"
+        value="1"
+        disabled
+        required
+      /><br />
+
+      <label for="R">Broj računa primaoca plaćanja:</label>
+      <input
+        type="text"
+        id="R"
+        name="referenti_broj"
+        placeholder="105000000000000029"
+        required
+      /><br />
+
+      <label for="N">Naziv primaoca plaćanja:</label>
+      <input
+        type="text"
+        id="N"
+        name="primalac"
+        placeholder="JP EPS BEOGRAD BALKANSKA 13"
+        required
+      /><br />
+
+      <label for="I">Valuta i iznos novčanih sredstava:</label>
+      <input
+        type="text"
+        id="I"
+        name="iznos"
+        placeholder="RSD3596,13"
+        required
+      /><br />
+
+      <label for="P">Podaci o platiocu:</label>
+      <input
+        type="text"
+        id="P"
+        name="platilac"
+        placeholder="Mrđo Mačkatović Župska 13 Beograd"
+        required
+      /><br />
+
+      <label for="SF">Šifra plaćanja:</label>
+      <input
+        type="text"
+        id="SF"
+        name="sifra_placanja"
+        placeholder="189"
+        required
+      /><br />
+
+      <label for="S">Svrha plaćanja:</label>
+      <input
+        type="text"
+        id="S"
+        name="svrha_placanja"
+        placeholder="Uplata za klopu"
+        required
+      /><br />
+
+      <label for="RO">Model i poziv na broj:</label>
+      <input
+        type="text"
+        id="RO"
+        name="identifikator"
+        placeholder="97163220000111111111000"
+        required
+      /><br />
+
+      <button type="submit">Generate QR Code</button>
+    </form>
+
+    <h2>Generated QR Code:</h2>
+    <img
+      id="qrCode"
+      src=""
+      alt="QR Code will appear here"
+      style="display: none"
+    />
+
+    <script src="script.js"></script>
+  </body>
+</html>

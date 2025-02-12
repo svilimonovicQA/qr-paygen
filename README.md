@@ -18,7 +18,7 @@ A web application that generates QR codes for payment information, making it eas
 
 ## Getting Started
 
-1. Clone the repositoryyy:
+1. Clone the repository:
 
 ```bash
 git clone https://github.com/svilimonovicQA/qr-paygen.git

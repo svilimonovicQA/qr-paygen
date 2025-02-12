@@ -5,14 +5,19 @@ A web application that generates QR codes for payment information, making it eas
 ## Features
 
 - Generate QR codes for payment information
-- Easy-to-use interface
+- Interactive form with modern UI effects:
+  - Smooth hover animations
+  - Visual feedback on input focus
+  - Dynamic button interactions
+  - Responsive hover effects
 - Instant QR code generation
 - Responsive design
+- Enhanced user experience with visual feedback
 
 ## Technologies Used
 
 - HTML5
-- CSS3
+- CSS3 (with modern transitions and animations)
 - JavaScript
 - QR Code Generation Library
 

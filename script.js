@@ -56,10 +56,16 @@ document.getElementById("qrForm").addEventListener("submit", function (event) {
     R: document.getElementById("R").value,
     N: document.getElementById("N").value,
     I: document.getElementById("I").value,
-    P: document.getElementById("P").value,
+    ...(document.getElementById("P").value && {
+      P: document.getElementById("P").value,
+    }),
     SF: document.getElementById("SF").value,
-    S: document.getElementById("S").value,
-    RO: document.getElementById("RO").value,
+    ...(document.getElementById("S").value && {
+      S: document.getElementById("S").value,
+    }),
+    ...(document.getElementById("RO").value && {
+      RO: document.getElementById("RO").value,
+    }),
   };
 
   // Validate required fields
@@ -86,16 +92,18 @@ document.getElementById("qrForm").addEventListener("submit", function (event) {
     hasErrors = true;
   }
 
-  // Validate reference number
-  const referenceValidation = validateReferenceNumber(formData.RO);
-  if (!referenceValidation.isValid) {
-    showError("RO", referenceValidation.message);
-    hasErrors = true;
+  // Validate reference number if provided
+  if (formData.RO) {
+    const referenceValidation = validateReferenceNumber(formData.RO);
+    if (!referenceValidation.isValid) {
+      showError("RO", referenceValidation.message);
+      hasErrors = true;
+    }
   }
 
-  // Validate other required fields
-  ["N", "P", "S"].forEach((fieldId) => {
-    if (!formData[fieldId].trim()) {
+  // Validate required fields
+  ["K", "V", "C", "R", "N", "I", "SF"].forEach((fieldId) => {
+    if (!document.getElementById(fieldId).value.trim()) {
       showError(fieldId, "Ovo polje je obavezno");
       hasErrors = true;
     }

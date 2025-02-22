@@ -9,7 +9,7 @@
   <body>
     <h1>QR PayGen</h1>
     <form id="qrForm">
-      <label for="K">Identifikacija NBS IPS QR koda:</label>
+      <label for="K">Identifikacija NBS IPS QR koda: *</label>
       <input
         type="text"
         id="K"
@@ -19,7 +19,7 @@
         required
       /><br />
 
-      <label for="V">Verzija:</label>
+      <label for="V">Verzija: *</label>
       <input
         type="text"
         id="V"
@@ -29,7 +29,7 @@
         required
       /><br />
 
-      <label for="C">Znakovni skup:</label>
+      <label for="C">Znakovni skup: *</label>
       <input
         type="text"
         id="C"
@@ -39,7 +39,7 @@
         required
       /><br />
 
-      <label for="R">Broj računa primaoca plaćanja:</label>
+      <label for="R">Broj računa primaoca plaćanja: *</label>
       <input
         type="text"
         id="R"
@@ -48,7 +48,7 @@
         required
       /><br />
 
-      <label for="N">Naziv primaoca plaćanja:</label>
+      <label for="N">Naziv primaoca plaćanja: *</label>
       <input
         type="text"
         id="N"
@@ -57,7 +57,7 @@
         required
       /><br />
 
-      <label for="I">Valuta i iznos novčanih sredstava:</label>
+      <label for="I">Valuta i iznos novčanih sredstava: *</label>
       <input
         type="text"
         id="I"
@@ -72,10 +72,9 @@
         id="P"
         name="platilac"
         placeholder="Mrđo Mačkatović Župska 13 Beograd"
-        required
       /><br />
 
-      <label for="SF">Šifra plaćanja:</label>
+      <label for="SF">Šifra plaćanja: *</label>
       <input
         type="text"
         id="SF"
@@ -91,7 +90,6 @@
         id="S"
         name="svrha_placanja"
         placeholder="Uplata za klopu"
-        required
       /><br />
 
       <label for="RO">Model i poziv na broj:</label>
@@ -99,9 +97,7 @@
         type="text"
         id="RO"
         name="identifikator"
-        value="97163220000111111111000"
-        disabled
-        required
+        placeholder="97163220000111111111000"
       /><br />
 
       <button type="submit">Generate QR Code</button>

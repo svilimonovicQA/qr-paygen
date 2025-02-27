@@ -150,6 +150,47 @@ fetch("https://nbs.rs/QRcode/api/qr/v1/gen", {
 
 ## Testing
 
+### Test Environment
+
+The project uses Jest with JSDOM for testing. The testing environment is configured in `package.json`:
+
+```json
+{
+  "jest": {
+    "testEnvironment": "jsdom",
+    "setupFiles": ["./tests/setup.js"]
+  }
+}
+```
+
+Key testing dependencies:
+
+- jest (^29.7.0): Testing framework
+- jest-environment-jsdom (^29.7.0): DOM environment for tests
+- whatwg-fetch (^3.6.19): Fetch API polyfill for tests
+
+The `tests/setup.js` file provides the necessary DOM elements and fetch polyfill for testing:
+
+```javascript
+require("whatwg-fetch");
+
+document.body.innerHTML = `
+  <form id="qrForm">
+    <input id="K" type="text">
+    <input id="V" type="text">
+    <input id="C" type="text">
+    <input id="R" type="text">
+    <input id="N" type="text">
+    <input id="I" type="text">
+    <input id="P" type="text">
+    <input id="SF" type="text">
+    <input id="S" type="text">
+    <input id="RO" type="text">
+  </form>
+  <img id="qrCode">
+`;
+```
+
 ### Test Structure
 
 1. **Validation Tests** (validation.test.js)

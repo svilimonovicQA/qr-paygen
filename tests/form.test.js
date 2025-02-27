@@ -10,8 +10,13 @@ const scriptContent = fs.readFileSync(
 describe("Form Handling", () => {
   let form;
   let qrCodeImg;
+  let originalConsoleError;
 
   beforeEach(() => {
+    // Mock console.error before each test
+    originalConsoleError = console.error;
+    console.error = jest.fn();
+
     // Set up our document body
     document.body.innerHTML = `
       <form id="qrForm">
@@ -35,6 +40,11 @@ describe("Form Handling", () => {
 
     form = document.getElementById("qrForm");
     qrCodeImg = document.getElementById("qrCode");
+  });
+
+  afterEach(() => {
+    // Restore console.error after each test
+    console.error = originalConsoleError;
   });
 
   test("should show error for empty required fields", () => {
@@ -120,6 +130,9 @@ describe("Form Handling", () => {
     expect(errorMessage.textContent).toBe(
       "Greška pri generisanju QR koda. Molimo proverite unete podatke."
     );
+
+    // Verify that console.error was called
+    expect(console.error).toHaveBeenCalled();
   });
 
   test("should display QR code on successful API response", async () => {
